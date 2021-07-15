@@ -1,0 +1,21 @@
+<div class="small-container center-block mt-3">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Color</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr>
+        <td><%= @category.title %></td>
+        <td><div class="padding text-center" style="background-color:<%=@category.color%>"></div></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <%= link_to 'Edit', edit_category_path(@category), class: "btn btn-secondary" %>
+  <%= link_to 'Back', categories_path, class: "btn btn-secondary" %>
+
+</div>

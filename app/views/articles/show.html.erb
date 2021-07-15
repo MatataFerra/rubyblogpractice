@@ -1,0 +1,27 @@
+
+<div class="large-container center-block">
+
+  <h1> <%= @article.title %> </h1>
+
+  <div>
+    <p>Escrito por: <strong> <%= @article.user.email %> </strong></p>
+  </div>
+
+  <div>
+    <%= @article.content %>
+  </div>
+
+  <div class="margin-top">
+    <p class="label">Tags</p>
+    <%@article.categories.each do |category| %>
+      <span class="badge rounded-pill padding mb-3" style="background-color:<%=category.color%>">
+        <%= link_to category.title, category, class:"text-white anchor" %>
+      </span>
+    <%end%>
+  </div>
+
+  <div>
+    <%= link_to "Eliminar el artículo", @article, method: :delete %>
+  </div>
+
+</div>
